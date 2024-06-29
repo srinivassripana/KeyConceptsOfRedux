@@ -1,0 +1,43 @@
+.mainheader{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid black;
+}
+.logo{
+    width: 110px;
+}
+.navlist > ul{
+    font-size: 20px;
+    display: flex;
+    list-style-type: none;
+}
+.navlist > ul > li{
+    margin: 10px;
+    padding: 10px;
+}
+.filter{
+    margin: 20px;
+    padding: 10px;
+}
+
+.restaurentMenu{
+    background-color: rgb(226, 237, 19);
+    display: flex;
+    flex-wrap:wrap;
+}
+.res-cards{
+    
+    width: 200px;
+    text-align: center; 
+    padding: 20px;
+    margin: 20px;  
+}
+.res-cards :hover{
+    background-color: aliceblue;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.cardimg{
+    width: 180px;
+    padding-top: 5px;
+}

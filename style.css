@@ -41,3 +41,13 @@
     width: 180px;
     padding-top: 5px;
 }
+.shimmer-card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-cards{
+    margin: 20px;
+    width: 200px;
+    background-color: #f0f0f0;
+}

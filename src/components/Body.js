@@ -25,15 +25,15 @@ const Body = () => {
   if(onlineStatus === false) return (<h1>oops there is an internet problem , you are offline</h1>);
   return (
     <div className="body">
-      <div className="filter">
+      <div className="m-2 p-5">
        <button 
-         className="filter-btn" 
+         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" 
          onClick={() =>{
            const filteredlist = listOfRes.filter((res) => res.info.avgRating >= 4 );
            setListOfRes(filteredlist);
        }}>Button</button>
       </div>
-      <div className="restaurentMenu">
+      <div className=" grid grid-cols-4 gap-8 transition duration-150 ease-out hover:ease-in">
         {listOfRes.map((restaurent, index) =>(
          <Restaurent key={restaurent.info.id} resData ={restaurent}/>
         ))}

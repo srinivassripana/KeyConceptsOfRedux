@@ -12,14 +12,14 @@ const Restaurent = (props) => {
     } = resData?.info;
   
     return (
-      <div className="res-cards"> 
-          <div  className="res-card">  {/* Individual flexbox for each restaurant */}
+      <div className=" bg-gray-50 hover:bg-slate-300 cursor-pointer shadow-lg rounded-t-xl transition-shadow"> 
+          <div  className=" ">  {/* Individual flexbox for each restaurant */}
             <img
-              className="cardimg"
+              className=" rounded-t-xl "
               src={CDN_URL + cloudinaryImageId}
               alt={name}
             />
-            <h3>{name}</h3>
+            <h3 className="text-center pt-2 pb-3 font-bold">{name}</h3>
             <h4>{costForTwo}</h4>
             <h4>Rating: {avgRating}</h4>
             <h4>Cuisines: {cuisines.join(', ')}</h4>

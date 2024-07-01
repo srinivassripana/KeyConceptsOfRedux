@@ -27,8 +27,8 @@ class UserClass extends React.Component{
     render(){
         const {name , bio , avatar_url } = this.state.userInfo;
         return(
-        <div  className="user-det">
-        <img src={avatar_url}></img>
+        <div  className=" ">
+        <img class="mx-auto mb-4"src={avatar_url}></img>
         <h2>This is {name}</h2><br></br>
         <h3>currently persuing B.Tech</h3><br></br>
         <h4>{bio}</h4><br></br>

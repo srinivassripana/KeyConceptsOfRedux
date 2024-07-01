@@ -1,5 +1,5 @@
 const Shimmer123456 = ()=>{
-    return 
+    return (
         <div className="shimmer-card">
             <div className="shimmer-cards">jai</div>
             <div className="shimmer-cards">jai</div>
@@ -13,7 +13,7 @@ const Shimmer123456 = ()=>{
             <div className="shimmer-cards"></div>
             <div className="shimmer-cards"></div>
         </div>
-    
+    );
 };
 
 export default Shimmer123456;

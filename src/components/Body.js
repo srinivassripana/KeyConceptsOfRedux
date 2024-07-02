@@ -1,10 +1,15 @@
-import Restaurent from "./Restaurent";
+import Restaurent,{WithOpenLabel} from "./Restaurent";
 import { useState , useEffect } from "react";
 import Shimmer123456 from "../components/Shimmer123456";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
 
   const [listOfRes ,setListOfRes] = useState([]);
+
+  console.log("Bodyrendered:",listOfRes);
+
+  const CardwithOpenLabel = WithOpenLabel(Restaurent);
   
   useEffect(
     ()=>{
@@ -35,7 +40,13 @@ const Body = () => {
       </div>
       <div className=" grid grid-cols-4 gap-8 transition duration-150 ease-out hover:ease-in">
         {listOfRes.map((restaurent, index) =>(
-         <Restaurent key={restaurent.info.id} resData ={restaurent}/>
+          <Link 
+          key={restaurent.info.id}
+          to={"/restaurents/" + restaurent.info.id}
+          >
+          {restaurent.info.isOpen ? (<CardwithOpenLabel   resData ={restaurent}/> ):( <Restaurent key={restaurent.info.id} resData ={restaurent}/>)
+}
+          </Link>
         ))}
       </div>
     </div>

@@ -27,6 +27,17 @@ const Restaurent = (props) => {
         
       </div>
     );
-};
 
+   
+};
+export const WithOpenLabel = ()=>{
+  return(props)=>{
+    return (
+      <div>
+        <label className="absolute bg-orange-800 text-cyan-50 p-2 rounded-tl-md">IsOpen</label>
+        <Restaurent {...props} />
+      </div>
+    )
+  }
+};
 export default Restaurent;

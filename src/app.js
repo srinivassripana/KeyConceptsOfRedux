@@ -9,7 +9,8 @@ import Cart from "./components/Cart";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext.js";
-
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 // Creating total app layout
@@ -24,12 +25,14 @@ const Applayout = () => {
   }, []); // Empty dependency array to run only once
 
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ LoggedInUser: userName, setUserName }}>
       <div className="App">
         <Header />
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 

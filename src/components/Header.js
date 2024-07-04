@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useState,useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () =>{
 
     const [btnName , setBtnName] = useState("Login");
     const onlineStatus = useOnlineStatus();
     const {LoggedInUser} = useContext(UserContext);
 
+    //subscribing the appstore using the useSelector hook as at the end of the hook is a normaljs function.
+    const cartItems = useSelector((store) => store.cart.items);
 
     return (
         <div className="flex justify-between shadow-md">
@@ -23,7 +26,7 @@ const Header = () =>{
                     </li>
                     <li class=""> <Link to="/about">About Us</Link></li>
                     <li> <Link to="/contact">Contact Us</Link></li>
-                    <li> <Link to="/cart">Cart</Link></li>
+                    <li> <Link to="/cart" className="font-bold text-xl">Cart ({cartItems.length})</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
                     <button className="login-btn"onClick={()=>{
                         btnName === "Login" ? setBtnName("LogOut") :setBtnName("Login");
